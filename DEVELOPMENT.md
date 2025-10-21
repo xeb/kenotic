@@ -6,10 +6,26 @@
 
 - Node.js (v18 or higher)
 - npm
+- make (optional, but recommended)
 
-### Installation
+### Quick Start with Make
 
-1. Install dependencies for both server and client:
+The easiest way to get started is using the provided Makefile:
+
+```bash
+# See all available commands
+make
+
+# Install all dependencies (server + client)
+make install
+
+# Start the React development server
+make web
+```
+
+### Installation (Manual)
+
+If you prefer not to use make, install dependencies manually:
 
 ```bash
 # Install server dependencies
@@ -23,7 +39,19 @@ cd ..
 
 ### Running the Development Server
 
-#### Backend Server (Port 3001)
+#### Using Make (Recommended)
+
+```bash
+# Terminal 1 - Start backend server (port 3001)
+make server
+
+# Terminal 2 - Start frontend React app (port 3000)
+make web
+```
+
+#### Manual Commands
+
+##### Backend Server (Port 3001)
 
 Start the Express backend server:
 
@@ -43,7 +71,7 @@ API endpoints:
 - `GET /api/sermons` - List all sermons
 - `GET /api/sermons/:id` - Get a specific sermon
 
-#### Frontend React App (Port 3000)
+##### Frontend React App (Port 3000)
 
 In a separate terminal, start the React development server:
 
@@ -53,6 +81,16 @@ npm start
 ```
 
 The React app will run on `http://localhost:3000` and proxy API requests to port 3001.
+
+### Available Make Commands
+
+Run `make` or `make help` to see all available commands:
+
+- `make install` - Install all dependencies (server + client)
+- `make web` - Start the React development server
+- `make server` - Start the Express backend server
+- `make build` - Build the React app for production
+- `make clean` - Remove all build artifacts and dependencies
 
 ### Project Structure
 

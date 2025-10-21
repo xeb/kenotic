@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilderness Notes - March 25 to May 3, 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            background-color: #f4e8d0;
+            color: #3a2f1f;
+            line-height: 1.8;
+            background-image:
+                linear-gradient(90deg, rgba(139, 119, 101, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(139, 119, 101, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Navigation Sidebar */
+        .nav-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, #d4c4a8 0%, #c9b99a 100%);
+            border-right: 3px solid #8b7765;
+            overflow-y: auto;
+            padding: 30px 20px;
+            box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .nav-sidebar::-webkit-scrollbar-track {
+            background: #d4c4a8;
+        }
+
+        .nav-sidebar::-webkit-scrollbar-thumb {
+            background: #8b7765;
+            border-radius: 4px;
+        }
+
+        .nav-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2a1f11;
+            text-align: center;
+            border-bottom: 2px solid #8b7765;
+            padding-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 8px;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 8px 12px;
+            color: #3a2f1f;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: rgba(255, 255, 255, 0.5);
+            border-left-color: #8b7765;
+            padding-left: 18px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 60px 80px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 3px double #8b7765;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #2a1f11;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #5a4f3f;
+            font-style: italic;
+        }
+
+        /* Day Entries */
+        .day-entry {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid #c9b99a;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            scroll-margin-top: 30px;
+        }
+
+        .day-header {
+            font-size: 2rem;
+            color: #2a1f11;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c9b99a;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .day-date {
+            font-weight: 700;
+        }
+
+        .day-number {
+            font-size: 1.2rem;
+            color: #5a4f3f;
+            font-style: italic;
+        }
+
+        /* Images */
+        .day-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .image-link {
+            display: block;
+            border: 2px solid #8b7765;
+            padding: 5px;
+            background: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-link img {
+            display: block;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5a4f3f;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Content */
+        .day-content {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .day-content p {
+            margin-bottom: 20px;
+        }
+
+        .verse {
+            background: rgba(139, 119, 101, 0.1);
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #8b7765;
+            font-style: italic;
+        }
+
+        .verse-ref {
+            font-weight: 700;
+            color: #2a1f11;
+            display: block;
+            margin-bottom: 10px;
+            font-style: normal;
+        }
+
+        .verse-text {
+            color: #3a2f1f;
+        }
+
+        /* Modal for enlarged images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 5px solid #f4e8d0;
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: #f4e8d0;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #c9b99a;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-sidebar {
+                width: 220px;
+            }
+
+            .main-content {
+                margin-left: 220px;
+                padding: 40px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 3px solid #8b7765;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+
+            .day-entry {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Decorative elements */
+        .ornament {
+            text-align: center;
+            margin: 40px 0;
+            color: #8b7765;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Sidebar -->
+        <nav class="nav-sidebar">
+            <div class="nav-title">Wilderness Notes<br><small style="font-size: 0.7em; font-weight: 400;">March 25 - May 3, 2025</small></div>
+            <ul class="nav-links">
+                <li><a href="#day-1" data-day="1">Day 1 - March 25</a></li>
+                <li><a href="#day-2" data-day="2">Day 2 - March 26</a></li>
+                <li><a href="#day-3" data-day="3">Day 3 - March 27</a></li>
+                <li><a href="#day-4" data-day="4">Day 4 - March 28</a></li>
+                <li><a href="#day-5" data-day="5">Day 5 - March 29</a></li>
+                <li><a href="#day-6" data-day="6">Day 6 - March 30</a></li>
+                <li><a href="#day-7" data-day="7">Day 7 - March 31</a></li>
+                <li><a href="#day-8" data-day="8">Day 8 - April 1</a></li>
+                <li><a href="#day-9" data-day="9">Day 9 - April 2</a></li>
+                <li><a href="#day-10" data-day="10">Day 10 - April 3</a></li>
+                <li><a href="#day-11" data-day="11">Day 11 - April 4</a></li>
+                <li><a href="#day-12" data-day="12">Day 12 - April 5</a></li>
+                <li><a href="#day-13" data-day="13">Day 13 - April 6</a></li>
+                <li><a href="#day-14" data-day="14">Day 14 - April 7</a></li>
+                <li><a href="#day-15" data-day="15">Day 15 - April 8</a></li>
+                <li><a href="#day-16" data-day="16">Day 16 - April 9</a></li>
+                <li><a href="#day-17" data-day="17">Day 17 - April 10</a></li>
+                <li><a href="#day-18" data-day="18">Day 18 - April 11</a></li>
+                <li><a href="#day-19" data-day="19">Day 19 - April 12</a></li>
+                <li><a href="#day-20" data-day="20">Day 20 - April 13</a></li>
+                <li><a href="#day-21" data-day="21">Day 21 - April 14</a></li>
+                <li><a href="#day-22" data-day="22">Day 22 - April 15</a></li>
+                <li><a href="#day-23" data-day="23">Day 23 - April 16</a></li>
+                <li><a href="#day-24" data-day="24">Day 24 - April 17</a></li>
+                <li><a href="#day-25" data-day="25">Day 25 - April 18</a></li>
+                <li><a href="#day-26" data-day="26">Day 26 - April 19</a></li>
+                <li><a href="#day-27" data-day="27">Day 27 - April 20</a></li>
+                <li><a href="#day-28" data-day="28">Day 28 - April 21</a></li>
+                <li><a href="#day-29" data-day="29">Day 29 - April 22</a></li>
+                <li><a href="#day-30" data-day="30">Day 30 - April 23</a></li>
+                <li><a href="#day-31" data-day="31">Day 31 - April 24</a></li>
+                <li><a href="#day-32" data-day="32">Day 32 - April 25</a></li>
+                <li><a href="#day-33" data-day="33">Day 33 - April 26</a></li>
+                <li><a href="#day-34" data-day="34">Day 34 - April 27</a></li>
+                <li><a href="#day-35" data-day="35">Day 35 - April 28</a></li>
+                <li><a href="#day-36" data-day="36">Day 36 - April 29</a></li>
+                <li><a href="#day-37" data-day="37">Day 37 - April 30</a></li>
+                <li><a href="#day-38" data-day="38">Day 38 - May 1</a></li>
+                <li><a href="#day-39" data-day="39">Day 39 - May 2</a></li>
+                <li><a href="#day-40" data-day="40">Day 40 - May 3</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Wilderness Notes</h1>
+                <p class="subtitle">A Journey Through Scripture and Reflection<br>March 25 - May 3, 2025</p>
+            </header>
+
+            <!-- Day 1 -->
+            <article class="day-entry" id="day-1">
+                <div class="day-header">
+                    <span class="day-date">2025-03-25</span>
+                    <span class="day-number">Day 1</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day1_title.jpg'); return false;">
+                            <img src="day1_title.jpg" alt="Day 1 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day1_content.jpg'); return false;">
+                            <img src="day1_content.jpg" alt="Day 1 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>I imbued you with zeal for me.</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Habakkuk 2:18-19</span>
+                        <span class="verse-text">"Of what value is an idol carved by a craftsman? Or an image that teaches lies? For the one who makes it trusts in his own creation; he makes idols that cannot speak. Woe to him who says to wood, 'Come to life!' Or to lifeless stone, 'Wake up!' Can it give guidance? It is covered with gold and silver; there is no breath in it."</span>
+                    </div>
+
+                    <div class="verse">
+                        <span class="verse-ref">Romans 2:23, 25</span>
+                        <span class="verse-text">"You who boast in the law, do you dishonor God by breaking the law? Circumcision has value if you observe the law, but if you break the law, you have become as though you had not been circumcised."</span>
+                    </div>
+
+                    <p>There is no breath in it for His creation works through power under.</p>
+                    <p>Romans starts by condemning the "other" then in chapter 2 flips it - how can you judge? (v4)</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 2 -->
+            <article class="day-entry" id="day-2">
+                <div class="day-header">
+                    <span class="day-date">2025-03-26</span>
+                    <span class="day-number">Day 2</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day2_title.jpg'); return false;">
+                            <img src="day2_title.jpg" alt="Day 2 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day2_content.jpg'); return false;">
+                            <img src="day2_content.jpg" alt="Day 2 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>I got angry at someone for reserving a car charger. Then found out I was that person's skip.</p>
+                    <p>Read this & repented.</p>
+                    <p>Patience as a way of God yields repentance.</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Romans 2:15</span>
+                        <span class="verse-text">"They show that the requirements of the law are written on their hearts, their consciences also bearing witness, and their thoughts sometimes accusing them and at other times even defending them."</span>
+                    </div>
+
+                    <p>No one does good</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Leviticus 16:15</span>
+                        <span class="verse-text">"He shall then slaughter the goat for the sin offering for the people and take its blood behind the curtain and do with it as he did with the bull's blood: He shall sprinkle it on the atonement cover and in front of it."</span>
+                    </div>
+
+                    <div class="verse">
+                        <span class="verse-ref">Galatians 3:6</span>
+                        <span class="verse-text">"So also Abraham 'believed God, and it was credited to him as righteousness.'"</span>
+                    </div>
+
+                    <p>→ Goat in the wilderness</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Psalm 18:19</span>
+                        <span class="verse-text">"He brought me out into a spacious place; he rescued me because he delighted in me."</span>
+                    </div>
+
+                    <p>To the devious you are shrewd</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 3 -->
+            <article class="day-entry" id="day-3">
+                <div class="day-header">
+                    <span class="day-date">2025-03-27</span>
+                    <span class="day-number">Day 3</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day3_title.jpg'); return false;">
+                            <img src="day3_title.jpg" alt="Day 3 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day3_content.jpg'); return false;">
+                            <img src="day3_content.jpg" alt="Day 3 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>If I try to please people, I am NOT a servant of God.</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Galatians 1:10</span>
+                        <span class="verse-text">"Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ."</span>
+                    </div>
+
+                    <p>Paul claims he was not taught.</p>
+                    <p>Continue to remember the poor.</p>
+                    <p>Do not provoke</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Fruit of the Spirit (Galatians 5:22-23)</span>
+                        <span class="verse-text">
+                            Love (the whole of the Law)<br>
+                            Joy<br>
+                            Peace<br>
+                            Forbearance/Patience<br>
+                            Kindness<br>
+                            Goodness<br>
+                            Faithfulness<br>
+                            Gentleness<br>
+                            Self-control
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 4 -->
+            <article class="day-entry" id="day-4">
+                <div class="day-header">
+                    <span class="day-date">2025-03-28</span>
+                    <span class="day-number">Day 4</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day4_content1.jpg'); return false;">
+                            <img src="day4_content1.jpg" alt="Day 4 Content 1">
+                        </a>
+                        <div class="image-caption">Content 1</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day4_content2.jpg'); return false;">
+                            <img src="day4_content2.jpg" alt="Day 4 Content 2">
+                        </a>
+                        <div class="image-caption">Content 2</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>HS is an AGENT. He has AGENCY.</p>
+                    <p>The HS is reliable and a seal of that hope.</p>
+                    <p>We feel the Spirit.</p>
+                    <p>Assurance of the hope.</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Ephesians 1:14</span>
+                        <span class="verse-text">"who is a deposit guaranteeing our inheritance until the redemption of those who are God's possession—to the praise of his glory."</span>
+                    </div>
+
+                    <p>Walking in/Aligning step with the Lord (dikaiosune) is believing, trusting and having FAITH that:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>He is who He says</li>
+                        <li>Will do what He promises</li>
+                    </ul>
+
+                    <p>"You will circle life" - this was separate from the building. It was growth.</p>
+
+                    <p>Glory in our sufferings because we know that suffering produces:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>perseverance</li>
+                        <li>character</li>
+                        <li>hope</li>
+                    </ul>
+
+                    <p>Hope does NOT put us to shame because God's love has poured into our hearts through HS who has been given to us</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 5 -->
+            <article class="day-entry" id="day-5">
+                <div class="day-header">
+                    <span class="day-date">2025-03-29</span>
+                    <span class="day-number">Day 5</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day5_title.jpg'); return false;">
+                            <img src="day5_title.jpg" alt="Day 5 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day5_content.jpg'); return false;">
+                            <img src="day5_content.jpg" alt="Day 5 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>How much MORE grace will the Lord pour out compared to the death from Adam.</p>
+                    <p>Life & Grace</p>
+                    <p>Life > death</p>
+                    <p>Buried w/ Christ through Baptism</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">1 Peter 1:4</span>
+                        <span class="verse-text">"and into an inheritance that can never perish, spoil or fade. This inheritance is kept in heaven for you,"</span>
+                    </div>
+
+                    <p>The inheritance is kept in Heaven until the Coming of the Salvation READY to be REVEALED</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 6 -->
+            <article class="day-entry" id="day-6">
+                <div class="day-header">
+                    <span class="day-date">2025-03-30</span>
+                    <span class="day-number">Day 6</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day6_content.jpg'); return false;">
+                            <img src="day6_content.jpg" alt="Day 6 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Elijah was Zealous</p>
+                    <p>Trust the King</p>
+                    <p>by taking up your cross</p>
+                    <p>what are you asking of me?</p>
+                    <p>Help, Support, Sacrifice</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 7 -->
+            <article class="day-entry" id="day-7">
+                <div class="day-header">
+                    <span class="day-date">2025-03-31</span>
+                    <span class="day-number">Day 7</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day7_title.jpg'); return false;">
+                            <img src="day7_title.jpg" alt="Day 7 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day7_content.jpg'); return false;">
+                            <img src="day7_content.jpg" alt="Day 7 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Slave to holiness</p>
+                    <p>Give up (literally) all you have and follow</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">1 Kings 19:21</span>
+                        <span class="verse-text">"So Elisha left him and went back. He took his yoke of oxen and slaughtered them. He burned the plowing equipment to cook the meat and gave it to the people, and they ate. Then he set out to follow Elijah and became his servant."</span>
+                    </div>
+
+                    <p>What does this mean for me? I have not slaughtered my oxen, not burnt my plow - are you asking me that Lord?</p>
+                    <p><strong>Build No Empire</strong></p>
+                    <p><strong>Feed My Kingdom</strong></p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 8 -->
+            <article class="day-entry" id="day-8">
+                <div class="day-header">
+                    <span class="day-date">2025-04-01</span>
+                    <span class="day-number">Day 8</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day8_title.jpg'); return false;">
+                            <img src="day8_title.jpg" alt="Day 8 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day8_content.jpg'); return false;">
+                            <img src="day8_content.jpg" alt="Day 8 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>You are already called to bear My Name.</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Isaiah 43:1</span>
+                        <span class="verse-text">"But now, this is what the LORD says— he who created you, Jacob, he who formed you, Israel: 'Do not fear, for I have redeemed you; I have summoned you by name; you are mine.'"</span>
+                    </div>
+
+                    <p>Don't deceive yourself it's not easy and that's OK. You do not stand condemned and nothing can separate or cut off the love from Christ.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 9 -->
+            <article class="day-entry" id="day-9">
+                <div class="day-header">
+                    <span class="day-date">2025-04-02</span>
+                    <span class="day-number">Day 9</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day9_title.jpg'); return false;">
+                            <img src="day9_title.jpg" alt="Day 9 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day9_content.jpg'); return false;">
+                            <img src="day9_content.jpg" alt="Day 9 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Jesus is Lord</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Romans 10:9</span>
+                        <span class="verse-text">"If you declare with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him from the dead, you will be saved."</span>
+                    </div>
+
+                    <p style="text-align: center;"><em>vs</em></p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Matthew 7:21</span>
+                        <span class="verse-text">"Not everyone who says to me, 'Lord, Lord,' will enter the kingdom of heaven, but only the one who does the will of my Father who is in heaven."</span>
+                    </div>
+
+                    <p>Be the one who does His will.</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>Love</li>
+                        <li>Faith</li>
+                        <li>Hope</li>
+                    </ul>
+                    <p>Open up to His Grace</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 10 -->
+            <article class="day-entry" id="day-10">
+                <div class="day-header">
+                    <span class="day-date">2025-04-03</span>
+                    <span class="day-number">Day 10</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day10_title.jpg'); return false;">
+                            <img src="day10_title.jpg" alt="Day 10 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day10_content.jpg'); return false;">
+                            <img src="day10_content.jpg" alt="Day 10 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>For Him, To</p>
+                    <p>From Him, Through Him, For Him are all things</p>
+                    <p>Living Sacrifice</p>
+                    <p>Do not conform. Be transformed by the renewing of your Mind</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Psalm 100</span>
+                        <span class="verse-text">"Shout for joy to the LORD, all the earth. Worship the LORD with gladness; come before him with joyful songs."</span>
+                    </div>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 11 -->
+            <article class="day-entry" id="day-11">
+                <div class="day-header">
+                    <span class="day-date">2025-04-04</span>
+                    <span class="day-number">Day 11</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day11_title.jpg'); return false;">
+                            <img src="day11_title.jpg" alt="Day 11 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day11_content.jpg'); return false;">
+                            <img src="day11_content.jpg" alt="Day 11 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>He did!</p>
+                    <p>I answered my prayer</p>
+                    <p>I have hope.</p>
+                    <p>Give what is owed - Respect & Honor</p>
+                    <p>Clothe ourselves in Jesus</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Romans 14:7-8</span>
+                        <span class="verse-text">"For none of us lives for ourselves alone, and none of us dies for ourselves alone. If we live, we live for the Lord; and if we die, we die for the Lord. So, whether we live or die, we belong to the Lord."</span>
+                    </div>
+
+                    <p>Live for the Lord</p>
+                    <p>Die for the Lord</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Daniel 1:17</span>
+                        <span class="verse-text">"To these four young men God gave knowledge and understanding of all kinds of literature and learning. And Daniel could understand visions and dreams of all kinds."</span>
+                    </div>
+
+                    <p>Hear me Lord!</p>
+                    <p>Save my team</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 12 -->
+            <article class="day-entry" id="day-12">
+                <div class="day-header">
+                    <span class="day-date">2025-04-05</span>
+                    <span class="day-number">Day 12</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day12_title.jpg'); return false;">
+                            <img src="day12_title.jpg" alt="Day 12 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day12_content.jpg'); return false;">
+                            <img src="day12_content.jpg" alt="Day 12 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Help me do Your will today</p>
+                    <p>I am your servant</p>
+                    <p>train me</p>
+                    <p>Accept and bear with one another</p>
+                    <p><em>(Tertius)</em></p>
+                    <p>Keep away from these who cause division and put obstacles</p>
+                    <p>Deep calls to deep</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 13 -->
+            <article class="day-entry" id="day-13">
+                <div class="day-header">
+                    <span class="day-date">2025-04-06</span>
+                    <span class="day-number">Day 13</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day13_title.jpg'); return false;">
+                            <img src="day13_title.jpg" alt="Day 13 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day13_content.jpg'); return false;">
+                            <img src="day13_content.jpg" alt="Day 13 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>My interpretation:</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>Do not solve Support myself Let the Law go ahead</li>
+                        <li>Offer peace or an arrangement to GBO</li>
+                        <li>Trust the Lord when it is time to fight</li>
+                    </ul>
+                    <p>Caleb will see it because he followed WHOLEHEARTEDLY</p>
+                    <p>? the Lord was angry w/Moses because of Israel?</p>
+                    <p>Do not fight</p>
+                    <p>I am going ahead of you</p>
+                    <p>You have not lacked anything</p>
+                    <p>The "fighting men" were eliminated from the camp.</p>
+                    <p>The King (Sihon) refused passage.</p>
+                    <p>him & his sons & all were destroyed</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 14 -->
+            <article class="day-entry" id="day-14">
+                <div class="day-header">
+                    <span class="day-date">2025-04-07</span>
+                    <span class="day-number">Day 14</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day14_title.jpg'); return false;">
+                            <img src="day14_title.jpg" alt="Day 14 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day14_content.jpg'); return false;">
+                            <img src="day14_content.jpg" alt="Day 14 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Create no idol</p>
+                    <p>Made you hear His voice to discipline you.</p>
+                    <p>Cities of refuge</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 15 -->
+            <article class="day-entry" id="day-15">
+                <div class="day-header">
+                    <span class="day-date">2025-04-08</span>
+                    <span class="day-number">Day 15</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day15_title.jpg'); return false;">
+                            <img src="day15_title.jpg" alt="Day 15 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day15_content.jpg'); return false;">
+                            <img src="day15_content.jpg" alt="Day 15 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>The fire will consume us - why should we die? (This is good)</p>
+                    <p>Lord let your presence and fire consume me</p>
+                    <p>Help me do your will in this life.</p>
+                    <p>Remind me of what you have already said</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 16 -->
+            <article class="day-entry" id="day-16">
+                <div class="day-header">
+                    <span class="day-date">2025-04-09</span>
+                    <span class="day-number">Day 16</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day16_title.jpg'); return false;">
+                            <img src="day16_title.jpg" alt="Day 16 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day16_content.jpg'); return false;">
+                            <img src="day16_content.jpg" alt="Day 16 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 7:22</span>
+                        <span class="verse-text">"The LORD your God will drive out those nations before you, little by little. You will not be allowed to eliminate them all at once, or the wild animals will multiply around you."</span>
+                    </div>
+
+                    <p>throwing them into great confusion</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>burn the images w/ fire</li>
+                        <li>do not take the gold</li>
+                    </ul>
+                    <p>How long?</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 17 -->
+            <article class="day-entry" id="day-17">
+                <div class="day-header">
+                    <span class="day-date">2025-04-10</span>
+                    <span class="day-number">Day 17</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day17_title.jpg'); return false;">
+                            <img src="day17_title.jpg" alt="Day 17 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day17_content.jpg'); return false;">
+                            <img src="day17_content.jpg" alt="Day 17 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>It is He that gives the ability to produce wealth and so confirms His covenant.</p>
+                    <p>It is their wickedness that they are driven of</p>
+                    <p>NOT your righteousness</p>
+                    <p>To fear God, walk, obey love, serve wholly, observe the commandments</p>
+                    <p>Everything with BREATH praise the Lord.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 18 -->
+            <article class="day-entry" id="day-18">
+                <div class="day-header">
+                    <span class="day-date">2025-04-11</span>
+                    <span class="day-number">Day 18</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day18_title.jpg'); return false;">
+                            <img src="day18_title.jpg" alt="Day 18 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day18_content.jpg'); return false;">
+                            <img src="day18_content.jpg" alt="Day 18 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Obey so that you have strength to take possession.</p>
+                    <p>You are our Patient King</p>
+                    <p>"In the quiet patience of your heart - there is a seed"</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 19 -->
+            <article class="day-entry" id="day-19">
+                <div class="day-header">
+                    <span class="day-date">2025-04-12</span>
+                    <span class="day-number">Day 19</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day19_title.jpg'); return false;">
+                            <img src="day19_title.jpg" alt="Day 19 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day19_content.jpg'); return false;">
+                            <img src="day19_content.jpg" alt="Day 19 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Daniel remained. (cont)</p>
+                    <p>The knowledge was a response to prayer. And to injustice!</p>
+                    <p>Your free offerings are to be enjoyed before the Lord - thus we worship</p>
+                    <p>Do not neglect the Levites</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 12:20</span>
+                        <span class="verse-text">"When the LORD your God has enlarged your territory as he promised you, and you crave meat and say, 'I would like some meat,' then you may eat as much of it as you want."</span>
+                    </div>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 20 -->
+            <article class="day-entry" id="day-20">
+                <div class="day-header">
+                    <span class="day-date">2025-04-13</span>
+                    <span class="day-number">Day 20</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day20_title.jpg'); return false;">
+                            <img src="day20_title.jpg" alt="Day 20 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day20_content.jpg'); return false;">
+                            <img src="day20_content.jpg" alt="Day 20 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Debt cancellation was intended for within Israel</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 15:3</span>
+                        <span class="verse-text">"You may require payment from a foreigner, but you must cancel any debt your fellow Israelite owes you."</span>
+                    </div>
+
+                    <p>"There should be no poor among you"</p>
+                    <p>There will always be the poor so give open-handed</p>
+                    <p>Peace</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 21 -->
+            <article class="day-entry" id="day-21">
+                <div class="day-header">
+                    <span class="day-date">2025-04-14</span>
+                    <span class="day-number">Day 21</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day21_title.jpg'); return false;">
+                            <img src="day21_title.jpg" alt="Day 21 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day21_content.jpg'); return false;">
+                            <img src="day21_content.jpg" alt="Day 21 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Peacemakers will be called Children of God</p>
+                    <p>Let your light shine</p>
+                    <p>Simply yes or no</p>
+                    <p>Do not be angry</p>
+                    <p>Cut off that which causes you to sin</p>
+                    <p>You must purge the evil from among you.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 22 -->
+            <article class="day-entry" id="day-22">
+                <div class="day-header">
+                    <span class="day-date">2025-04-15</span>
+                    <span class="day-number">Day 22</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day22_title.jpg'); return false;">
+                            <img src="day22_title.jpg" alt="Day 22 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day22_content.jpg'); return false;">
+                            <img src="day22_content.jpg" alt="Day 22 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Kill a cow as a way to atone.</p>
+                    <p>A sign of the Father's strength is a sin.</p>
+                    <p>You must purge the evil from among you.</p>
+                    <p>Do not ignore lost things 3rd gen Egyptians are cool?</p>
+                    <p>Anger is greed for being denied an Adamic will.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 23 -->
+            <article class="day-entry" id="day-23">
+                <div class="day-header">
+                    <span class="day-date">2025-04-16</span>
+                    <span class="day-number">Day 23</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day23_title.jpg'); return false;">
+                            <img src="day23_title.jpg" alt="Day 23 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day23_content.jpg'); return false;">
+                            <img src="day23_content.jpg" alt="Day 23 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Eat what I give you.</p>
+                    <p>Do not be afraid whether they listen or do not</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 24 -->
+            <article class="day-entry" id="day-24">
+                <div class="day-header">
+                    <span class="day-date">2025-04-17</span>
+                    <span class="day-number">Day 24</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day24_title.jpg'); return false;">
+                            <img src="day24_title.jpg" alt="Day 24 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day24_content.jpg'); return false;">
+                            <img src="day24_content.jpg" alt="Day 24 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Let others take refuge whatever your lips utter Do</p>
+                    <p>From a dream: whatever you ask of others they will do - be wise</p>
+                    <p>Jesus performed two miracles for the men</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>Calming the storm</li>
+                        <li>Exorcising demons</li>
+                    </ul>
+                    <p>Then will be no more night</p>
+                    <p>Jesus is the Morning Star?</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 25 -->
+            <article class="day-entry" id="day-25">
+                <div class="day-header">
+                    <span class="day-date">2025-04-18</span>
+                    <span class="day-number">Day 25</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day25_title.jpg'); return false;">
+                            <img src="day25_title.jpg" alt="Day 25 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day25_content.jpg'); return false;">
+                            <img src="day25_content.jpg" alt="Day 25 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>"You have said so"</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>never revealed Judas</li>
+                        <li>probably acknowledged him</li>
+                    </ul>
+                    <p>The spirit of God is willing but our flesh is weak</p>
+                    <p>He called Judas friend</p>
+                    <p>Remained Silent against His accusers.</p>
+                    <p>"You have said so" to Priest</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Matthew 26:64 & Psalm 42</span>
+                        <span class="verse-text">"The Mighty One"</span>
+                    </div>
+
+                    <p>"You have said so" to Pilot</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 26 -->
+            <article class="day-entry" id="day-26">
+                <div class="day-header">
+                    <span class="day-date">2025-04-19</span>
+                    <span class="day-number">Day 26</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day26_title.jpg'); return false;">
+                            <img src="day26_title.jpg" alt="Day 26 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day26_content.jpg'); return false;">
+                            <img src="day26_content.jpg" alt="Day 26 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>To covet is to refuse to accept one's own limitations.</p>
+                    <p>Carefully follow all these commands</p>
+                    <p>(Substitutional Obedience?)</p>
+                    <p>Woe to those who follow their own Spirit.</p>
+                    <p>Have seen nothing</p>
+                    <p>Opened their minds</p>
+                    <p>He will come back the same way.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 27 -->
+            <article class="day-entry" id="day-27">
+                <div class="day-header">
+                    <span class="day-date">2025-04-20</span>
+                    <span class="day-number">Day 27</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day27_title.jpg'); return false;">
+                            <img src="day27_title.jpg" alt="Day 27 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day27_content.jpg'); return false;">
+                            <img src="day27_content.jpg" alt="Day 27 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>A tent awaiting what is kept alive in Christ in Heaven until the Resurrection</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 28 -->
+            <article class="day-entry" id="day-28">
+                <div class="day-header">
+                    <span class="day-date">2025-04-21</span>
+                    <span class="day-number">Day 28</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day28_title.jpg'); return false;">
+                            <img src="day28_title.jpg" alt="Day 28 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day28_content.jpg'); return false;">
+                            <img src="day28_content.jpg" alt="Day 28 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Cursed w/ an anxious mind for not following God's commandments.</p>
+                    <p>Brutal curses.</p>
+                    <p>Our true identity is hidden but will be given as a white stone Known only to us.</p>
+                    <p>Those 2 laws, be disciples</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 29 -->
+            <article class="day-entry" id="day-29">
+                <div class="day-header">
+                    <span class="day-date">2025-04-22</span>
+                    <span class="day-number">Day 29</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day29_title.jpg'); return false;">
+                            <img src="day29_title.jpg" alt="Day 29 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day29_content.jpg'); return false;">
+                            <img src="day29_content.jpg" alt="Day 29 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Cover their faces with shame so they will seek your name.</p>
+                    <p>All my fountains are in you.</p>
+                    <p>Our present sufferings are not worth comparing to the glory that will be revealed in us</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 30 -->
+            <article class="day-entry" id="day-30">
+                <div class="day-header">
+                    <span class="day-date">2025-04-23</span>
+                    <span class="day-number">Day 30</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day30_title.jpg'); return false;">
+                            <img src="day30_title.jpg" alt="Day 30 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day30_content.jpg'); return false;">
+                            <img src="day30_content.jpg" alt="Day 30 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 29:6</span>
+                        <span class="verse-text">"You ate no bread and drank no wine or other fermented drink. I did this so that you might know that I am the LORD your God."</span>
+                    </div>
+
+                    <p>I led you through the desert so that you know that I am God.</p>
+                    <p>Success in the Kingdom is loving others</p>
+                    <p>The new command is to do that as Jesus did</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 31 -->
+            <article class="day-entry" id="day-31">
+                <div class="day-header">
+                    <span class="day-date">2025-04-24</span>
+                    <span class="day-number">Day 31</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day31_title.jpg'); return false;">
+                            <img src="day31_title.jpg" alt="Day 31 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day31_content.jpg'); return false;">
+                            <img src="day31_content.jpg" alt="Day 31 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Secret things belong to the Lord</p>
+                    <p>BUT revelations belong to us & our children</p>
+                    <ul style="margin-left: 40px; margin-bottom: 20px;">
+                        <li>You will create life</li>
+                        <li>Hummingbird nature</li>
+                    </ul>
+                    <p>Listen First</p>
+                    <p>then Help</p>
+                    <p>He will not leave you or forsake you. Do not be afraid or discouraged</p>
+                    <p>Trust as you go to the land & OBEY</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 32 -->
+            <article class="day-entry" id="day-32">
+                <div class="day-header">
+                    <span class="day-date">2025-04-25</span>
+                    <span class="day-number">Day 32</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day32_title.jpg'); return false;">
+                            <img src="day32_title.jpg" alt="Day 32 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day32_content.jpg'); return false;">
+                            <img src="day32_content.jpg" alt="Day 32 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>He knows what we are disposed to do</p>
+                    <p>The world will pass away in it's current state.</p>
+                    <p>Whoever does the Will of God.</p>
+                    <p><strong>JOIN THE PARTY!</strong></p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 33 -->
+            <article class="day-entry" id="day-33">
+                <div class="day-header">
+                    <span class="day-date">2025-04-26</span>
+                    <span class="day-number">Day 33</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day33_title.jpg'); return false;">
+                            <img src="day33_title.jpg" alt="Day 33 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day33_content.jpg'); return false;">
+                            <img src="day33_content.jpg" alt="Day 33 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Your ways are perfect</p>
+                    <p>Annoying God w/ created idols (that start worship)</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 31:20</span>
+                        <span class="verse-text">"When I have brought them into the land flowing with milk and honey, the land I promised on oath to their ancestors, and when they eat their fill and thrive, they will turn to other gods and worship them, rejecting me and breaking my covenant."</span>
+                    </div>
+
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 32:16</span>
+                        <span class="verse-text">"They made him jealous with their foreign gods and angered him with their detestable idols."</span>
+                    </div>
+
+                    <p>The world & His desires actually pass away</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 34 -->
+            <article class="day-entry" id="day-34">
+                <div class="day-header">
+                    <span class="day-date">2025-04-27</span>
+                    <span class="day-number">Day 34</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day34_title.jpg'); return false;">
+                            <img src="day34_title.jpg" alt="Day 34 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day34_content.jpg'); return false;">
+                            <img src="day34_content.jpg" alt="Day 34 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="verse">
+                        <span class="verse-ref">Deuteronomy 32:21, 30</span>
+                        <span class="verse-text">"They made me jealous by what is no god and angered me with their worthless idols. I will make them envious by those who are not a people; I will make them angry by a nation that has no understanding."</span>
+                    </div>
+
+                    <p>Your ways are not my ways.</p>
+                    <p>Welcome the least</p>
+                    <p>Love your neighbors</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 35 -->
+            <article class="day-entry" id="day-35">
+                <div class="day-header">
+                    <span class="day-date">2025-04-28</span>
+                    <span class="day-number">Day 35</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day35_title.jpg'); return false;">
+                            <img src="day35_title.jpg" alt="Day 35 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day35_content.jpg'); return false;">
+                            <img src="day35_content.jpg" alt="Day 35 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>The Day of the Lord is coming for created things</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Isaiah 2:12-17</span>
+                        <span class="verse-text">"The LORD Almighty has a day in store for all the proud and lofty, for all that is exalted (and they will be humbled)... The arrogance of man will be brought low and human pride humbled; the LORD alone will be exalted in that day."</span>
+                    </div>
+
+                    <p>The plunder from the poor is in your houses</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Isaiah 3:14</span>
+                        <span class="verse-text">"The LORD enters into judgment against the elders and leaders of his people: 'It is you who have ruined my vineyard; the plunder from the poor is in your houses.'"</span>
+                    </div>
+
+                    <p>Moses did NOT become Joseph. He did NOT become a governor.</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 36 -->
+            <article class="day-entry" id="day-36">
+                <div class="day-header">
+                    <span class="day-date">2025-04-29</span>
+                    <span class="day-number">Day 36</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day36_title.jpg'); return false;">
+                            <img src="day36_title.jpg" alt="Day 36 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day36_content.jpg'); return false;">
+                            <img src="day36_content.jpg" alt="Day 36 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Stop Doing Wrong</p>
+                    <p>Learn to do right : seek justice</p>
+                    <p>Defend the oppressed</p>
+                    <p>Immediately "Your sins [will be] white as snow"</p>
+                    <p>Soar on wings like eagles</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 37 -->
+            <article class="day-entry" id="day-37">
+                <div class="day-header">
+                    <span class="day-date">2025-04-30</span>
+                    <span class="day-number">Day 37</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day37_title.jpg'); return false;">
+                            <img src="day37_title.jpg" alt="Day 37 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day37_content.jpg'); return false;">
+                            <img src="day37_content.jpg" alt="Day 37 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="verse">
+                        <span class="verse-ref">John 14:23</span>
+                        <span class="verse-text">"Jesus replied, 'Anyone who loves me will obey my teaching. My Father will love them, and we will come to them and make our home with them.'"</span>
+                    </div>
+
+                    <p>If you love Jesus you will obey His teachings and He will come to you.</p>
+                    <p>Peace he gives but not as the world does</p>
+                    <p>Do not ALLOW your hearts to be troubled and do not be afraid.</p>
+                    <p>Proof of the world comes so that the world knows that Jesus loves the Father</p>
+                    <p>Enjoy the writing</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 38 -->
+            <article class="day-entry" id="day-38">
+                <div class="day-header">
+                    <span class="day-date">2025-05-01</span>
+                    <span class="day-number">Day 38</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day38_title.jpg'); return false;">
+                            <img src="day38_title.jpg" alt="Day 38 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day38_content.jpg'); return false;">
+                            <img src="day38_content.jpg" alt="Day 38 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>The Father's glory came to Jesus through the Church</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">John 17:10</span>
+                        <span class="verse-text">"All I have is yours, and all you have is mine. And glory has come to me through them."</span>
+                    </div>
+
+                    <div class="verse">
+                        <span class="verse-ref">John 17:22</span>
+                        <span class="verse-text">"I have given them the glory that you gave me, that they may be one as we are one."</span>
+                    </div>
+
+                    <p>The Father's name is the name He gave Jesus → Protects us by His name?</p>
+                    <p>Dream: "Get out of the metrg"</p>
+                    <p>Unity & Communion w/ Jesus & the Father</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 39 -->
+            <article class="day-entry" id="day-39">
+                <div class="day-header">
+                    <span class="day-date">2025-05-02</span>
+                    <span class="day-number">Day 39</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day39_title.jpg'); return false;">
+                            <img src="day39_title.jpg" alt="Day 39 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day39_content.jpg'); return false;">
+                            <img src="day39_content.jpg" alt="Day 39 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>Our present suffering mirrors in small and bearable ways the suffering that Jesus endured - so that we may know He loves us and we're sanctified in Him</p>
+                </div>
+            </article>
+
+            <div class="ornament">❦</div>
+
+            <!-- Day 40 -->
+            <article class="day-entry" id="day-40">
+                <div class="day-header">
+                    <span class="day-date">2025-05-03</span>
+                    <span class="day-number">Day 40</span>
+                </div>
+                <div class="day-images">
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day40_title.jpg'); return false;">
+                            <img src="day40_title.jpg" alt="Day 40 Header">
+                        </a>
+                        <div class="image-caption">Header</div>
+                    </div>
+                    <div>
+                        <a href="#" class="image-link" onclick="openModal('day40_content.jpg'); return false;">
+                            <img src="day40_content.jpg" alt="Day 40 Content">
+                        </a>
+                        <div class="image-caption">Content</div>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <p>He looks for justice</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Isaiah 5:8</span>
+                        <span class="verse-text">"Woe to you who add house to house and join field to field till no space is left and you live alone in the land."</span>
+                    </div>
+
+                    <p>Lambs will feed in the ruins of the rich</p>
+
+                    <div class="verse">
+                        <span class="verse-ref">Isaiah 6:2</span>
+                        <span class="verse-text">"Above him were seraphim, each with six wings: With two wings they covered their faces, with two they covered their feet, and with two they were flying."</span>
+                    </div>
+
+                    <p>Seraphim covered faces like Ezekiel?</p>
+                    <p>If you do not stand firm in your Faith you will not stand.</p>
+                </div>
+            </article>
+
+            <div class="ornament" style="font-size: 2rem; margin: 60px 0;">✠</div>
+
+        </main>
+    </div>
+
+    <!-- Modal for enlarged images -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+        }
+
+        // Navigation highlighting
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.day-entry');
+
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+
+        // Smooth scrolling for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

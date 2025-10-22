@@ -1,4 +1,4 @@
-const sermons = [
+export const sermons = [
   {
     id: "kenosis-creating-space",
     title: "Kenosis: Creating Space for Love",
@@ -280,4 +280,4 @@ Choose which one you'll invest in.
   }
 ];
 
-module.exports = sermons;
+export default sermons;

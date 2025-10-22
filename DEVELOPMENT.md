@@ -8,33 +8,33 @@
 - npm
 - make (optional, but recommended)
 
-### Quick Start with Make
+### Quick Start
 
-The easiest way to get started is using the provided Makefile:
+The easiest way to get started:
 
 ```bash
-# See all available commands
-make
-
-# Install all dependencies (server + client)
+# Install dependencies
 make install
 
-# Start the React development server
-make web
+# Start the development server
+make dev
 ```
 
-### Installation (Manual)
+That's it! The app will open at http://localhost:3000 with hot reloading enabled.
 
-If you prefer not to use make, install dependencies manually:
+### Installation
+
+#### Using Make (Recommended)
 
 ```bash
-# Install server dependencies
-npm install
+make install
+```
 
-# Install client dependencies
+#### Manual Installation
+
+```bash
 cd client
 npm install
-cd ..
 ```
 
 ### Running the Development Server
@@ -42,74 +42,49 @@ cd ..
 #### Using Make (Recommended)
 
 ```bash
-# Terminal 1 - Start backend server (port 3001)
-make server
-
-# Terminal 2 - Start frontend React app (port 3000)
+make dev
+# or
+make start
+# or
 make web
 ```
 
-#### Manual Commands
-
-##### Backend Server (Port 3001)
-
-Start the Express backend server:
-
-```bash
-npm start
-```
-
-Or for development with auto-restart:
-
-```bash
-npm run dev
-```
-
-The server will run on `http://localhost:3001`
-
-API endpoints:
-- `GET /api/sermons` - List all sermons
-- `GET /api/sermons/:id` - Get a specific sermon
-
-##### Frontend React App (Port 3000)
-
-In a separate terminal, start the React development server:
+#### Manual Command
 
 ```bash
 cd client
 npm start
 ```
 
-The React app will run on `http://localhost:3000` and proxy API requests to port 3001.
+The development server runs on `http://localhost:3000` with hot reloading enabled. Any changes you make to the code will automatically refresh the browser.
 
 ### Available Make Commands
 
 Run `make` or `make help` to see all available commands:
 
-- `make install` - Install all dependencies (server + client)
-- `make web` - Start the React development server
-- `make server` - Start the Express backend server
-- `make build` - Build the React app for production
+- `make install` - Install dependencies
+- `make dev` - Start the development server (port 3000)
+- `make start` - Alias for `make dev`
+- `make web` - Alias for `make dev`
+- `make build` - Build the app for production
 - `make clean` - Remove all build artifacts and dependencies
 
 ### Project Structure
 
 ```
 kenotic/
-├── server/
-│   ├── index.js          # Express server
-│   └── data/
-│       └── sermons.js    # Sermon data
 ├── client/               # React application
 │   ├── public/
 │   └── src/
 │       ├── components/
 │       │   ├── SermonList.js
 │       │   └── SermonDetail.js
+│       ├── data/
+│       │   └── sermons.js    # Sermon data
 │       ├── App.js
 │       └── App.css
 ├── sources/              # Source materials for sermons
-└── package.json
+└── Makefile
 ```
 
 ### Design Aesthetic
@@ -137,18 +112,17 @@ All sample sermons are tagged with "sample" for easy identification.
 
 ### Building for Production
 
+#### Using Make
+
 ```bash
-# Build the React app
+make build
+```
+
+#### Manual Build
+
+```bash
 cd client
 npm run build
-
-# The built files will be in client/build/
 ```
 
-To serve in production mode, set the NODE_ENV:
-
-```bash
-NODE_ENV=production npm start
-```
-
-The server will serve the built React app from `client/build/`.
+The built files will be in `client/build/` and can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.).

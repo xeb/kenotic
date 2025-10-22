@@ -1,46 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import sermons from '../data/sermons';
 
 function SermonDetail() {
   const { id } = useParams();
-  const [sermon, setSermon] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const sermon = sermons.find(s => s.id === id);
 
-  useEffect(() => {
-    fetch(`/api/sermons/${id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Sermon not found');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setSermon(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [id]);
-
-  if (loading) {
-    return <div className="loading">Loading sermon...</div>;
-  }
-
-  if (error) {
+  if (!sermon) {
     return (
       <div className="sermon-detail">
         <Link to="/" className="back-link">← Back to Sermons</Link>
-        <div className="error">Error: {error}</div>
+        <div className="error">Sermon not found</div>
       </div>
     );
-  }
-
-  if (!sermon) {
-    return <div className="error">Sermon not found</div>;
   }
 
   return (

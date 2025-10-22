@@ -1,37 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import sermons from '../data/sermons';
 
 function SermonList() {
-  const [sermons, setSermons] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/sermons')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch sermons');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setSermons(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div className="loading">Loading sermons...</div>;
-  }
-
-  if (error) {
-    return <div className="error">Error: {error}</div>;
-  }
-
   return (
     <div className="sermon-list">
       {sermons.map(sermon => (

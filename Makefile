@@ -1,4 +1,4 @@
-.PHONY: help dev start web install build clean
+.PHONY: help dev install build clean
 
 # Default target - show help
 help:
@@ -9,8 +9,6 @@ help:
 	@echo "  make help    - Show this help message (default)"
 	@echo "  make install - Install dependencies"
 	@echo "  make dev     - Start the development server (port 3000)"
-	@echo "  make start   - Alias for 'make dev'"
-	@echo "  make web     - Alias for 'make dev'"
 	@echo "  make build   - Build the app for production"
 	@echo "  make clean   - Remove all build artifacts and dependencies"
 	@echo ""
@@ -25,10 +23,6 @@ install:
 dev:
 	@echo "Starting development server on http://localhost:3000"
 	@cd client && npm start
-
-# Aliases for dev
-start: dev
-web: dev
 
 # Build the React app for production
 build:

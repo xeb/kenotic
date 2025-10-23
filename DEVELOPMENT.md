@@ -43,10 +43,6 @@ npm install
 
 ```bash
 make dev
-# or
-make start
-# or
-make web
 ```
 
 #### Manual Command
@@ -64,8 +60,6 @@ Run `make` or `make help` to see all available commands:
 
 - `make install` - Install dependencies
 - `make dev` - Start the development server (port 3000)
-- `make start` - Alias for `make dev`
-- `make web` - Alias for `make dev`
 - `make build` - Build the app for production
 - `make clean` - Remove all build artifacts and dependencies
 

@@ -23,8 +23,9 @@ The sermons explore deep theological and practical topics including:
 
 ## Technical Stack
 
-- **Platform**: Node.js + React web server
-- **Deployment**: kenotic.ai
+- **Platform**: React (single-page application)
+- **Deployment**: kenotic.ai (static hosting)
+- **Development**: Hot-reloading dev server
 
 ## Design Aesthetic
 

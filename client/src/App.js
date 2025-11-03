@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import SermonList from './components/SermonList';
+import Landing from './components/Landing';
 import SermonDetail from './components/SermonDetail';
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
 
         <main className="App-main">
           <Routes>
-            <Route path="/" element={<SermonList />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/sermon/:id" element={<SermonDetail />} />
           </Routes>
         </main>

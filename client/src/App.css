@@ -283,6 +283,121 @@ body {
   color: #d88a6a;
 }
 
+/* Landing Page - Scrollable Presentation */
+.landing-container {
+  height: calc(100vh - 200px); /* Account for header/footer */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.landing-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.landing-slide {
+  height: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.slide-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-quote {
+  background-color: #3a3226;
+  border: 2px solid #5a4a3a;
+  border-left: 6px solid #7a6a5a;
+  padding: 3rem 2.5rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #e8d4b8;
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.quote-source {
+  text-align: right;
+  font-size: 0.95rem;
+  color: #a89580;
+  font-style: normal;
+}
+
+.quote-source a {
+  color: #b8a890;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.quote-source a:hover {
+  color: #e8d4b8;
+  border-bottom-color: #7a6a5a;
+}
+
+.scroll-indicator {
+  font-size: 2rem;
+  color: #5a4a3a;
+  animation: bounce 2s infinite;
+  margin-top: 2rem;
+}
+
+.scroll-indicator-final {
+  font-size: 1.25rem;
+  color: #7a6a5a;
+  animation: bounce 2s infinite;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Different background tones for each slide */
+.slide-1 {
+  background-color: #2a2520;
+}
+
+.slide-2 {
+  background-color: #2d2722;
+}
+
+.slide-3 {
+  background-color: #2f2824;
+}
+
+/* Sermons section after slides */
+.sermons-section {
+  min-height: 100vh;
+  padding: 3rem 0;
+  background-color: #2a2520;
+  scroll-snap-align: start;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .App-header {
@@ -315,5 +430,17 @@ body {
 
   .sermon-content {
     font-size: 1rem;
+  }
+
+  .landing-slide {
+    padding: 2rem 1rem;
+  }
+
+  .landing-quote {
+    padding: 2rem 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.25rem;
   }
 }

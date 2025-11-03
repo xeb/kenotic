@@ -8,7 +8,7 @@ help:
 	@echo ""
 	@echo "  make help    - Show this help message (default)"
 	@echo "  make install - Install dependencies"
-	@echo "  make dev     - Start the development server (port 3000)"
+	@echo "  make dev     - Start the development server (port 1411)"
 	@echo "  make build   - Build the app for production"
 	@echo "  make clean   - Remove all build artifacts and dependencies"
 	@echo ""
@@ -19,9 +19,9 @@ install:
 	@cd client && npm install
 	@echo "✓ Dependencies installed"
 
-# Start the React development server (port 3000)
+# Start the React development server (port 1411)
 dev:
-	@echo "Starting development server on http://localhost:3000"
+	@echo "Starting development server on http://localhost:1411"
 	@cd client && npm start
 
 # Build the React app for production

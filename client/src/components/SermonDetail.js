@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import sermons from '../data/sermons';
 
 function SermonDetail() {
@@ -34,7 +35,7 @@ function SermonDetail() {
         </div>
       </div>
       <div className="sermon-content">
-        <ReactMarkdown>{sermon.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{sermon.content}</ReactMarkdown>
       </div>
     </div>
   );

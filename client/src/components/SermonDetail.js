@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import sermons from '../data/sermons';
+import { loadSermon } from '../utils/sermonLoader';
 
 function SermonDetail() {
   const { id } = useParams();
-  const sermon = sermons.find(s => s.id === id);
+  const [sermon, setSermon] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!sermon) {
+  useEffect(() => {
+    async function fetchSermon() {
+      setLoading(true);
+      setError(null);
+      try {
+        const loadedSermon = await loadSermon(id);
+        setSermon(loadedSermon);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchSermon();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="sermon-detail">
+        <Link to="/" className="back-link">← Back to Sermons</Link>
+        <div className="loading">Loading sermon...</div>
+      </div>
+    );
+  }
+
+  if (error || !sermon) {
     return (
       <div className="sermon-detail">
         <Link to="/" className="back-link">← Back to Sermons</Link>

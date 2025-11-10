@@ -332,4 +332,53 @@ These sermons are grounded in the understanding that:
 
 ---
 
+## Managing Sermon Files
+
+### File-Based Content System
+
+As of November 2025, sermons are stored as separate Markdown and YAML files in `client/public/sermons/`. This makes editing easier and enables hot-reload during development.
+
+### File Structure
+
+```
+client/public/
+├── sermons/
+│   ├── sermon-id.md      # Sermon content (markdown)
+│   ├── sermon-id.yml     # Sermon metadata (YAML)
+│   └── ...
+└── quotes.md             # Landing page quotes
+```
+
+### Adding a New Sermon
+
+1. **Create YAML metadata** (`client/public/sermons/your-sermon-id.yml`):
+```yaml
+id: your-sermon-id
+title: "Your Sermon Title"
+date: "2025-11-09"
+excerpt: "Brief summary..."
+tags:
+  - tag1
+  - tag2
+```
+
+2. **Create Markdown content** (`client/public/sermons/your-sermon-id.md`)
+
+3. **Register the sermon ID** in `client/src/utils/sermonLoader.js`:
+```javascript
+const SERMON_IDS = [
+  'kenosis-creating-space',
+  'your-sermon-id',  // Add here
+  // ...
+];
+```
+
+4. **Save and the dev server will auto-reload** - changes to `.md` and `.yml` files automatically trigger browser refresh during development.
+
+### Editing Landing Quotes
+
+Edit `client/public/quotes.md` to change the three quotes on the scrollable landing page.
+
+---
+
 *Journey before destination. The King reigns. We lack nothing.*

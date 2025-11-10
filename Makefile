@@ -20,6 +20,10 @@ install:
 	@echo "✓ Dependencies installed"
 
 # Start the React development server (port 1411)
+# Hot-reload is enabled for all files including:
+#   - React components (src/)
+#   - Sermon markdown and YAML files (public/sermons/)
+#   - Landing page quotes (public/quotes.md)
 dev:
 	@echo "Starting development server on http://localhost:1411"
 	@cd client && npm start

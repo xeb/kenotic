@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import sermons from '../data/sermons';
+import { loadAllSermons } from '../utils/sermonLoader';
 
 function SermonList() {
+  const [sermons, setSermons] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchSermons() {
+      setLoading(true);
+      const loadedSermons = await loadAllSermons();
+      setSermons(loadedSermons);
+      setLoading(false);
+    }
+    fetchSermons();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading sermons...</div>;
+  }
+
   return (
     <div className="sermon-list">
       {sermons.map(sermon => (

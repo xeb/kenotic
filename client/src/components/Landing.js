@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SermonList from './SermonList';
+import { loadQuotes } from '../utils/sermonLoader';
 
 function Landing() {
+  const [quotes, setQuotes] = useState({
+    quote1: { text: '', source: null },
+    quote2: { text: '', source: '/sermon/end-of-empire-dawn-of-kingdom' },
+    quote3: { text: '', source: '/sermon/reality-not-rules' }
+  });
+
+  useEffect(() => {
+    async function fetchQuotes() {
+      const quotesMarkdown = await loadQuotes();
+
+      // Simple parsing - extract quotes between ## markers
+      const quote1Match = quotesMarkdown.match(/## Quote 1: The Cross\n\n"([^"]+)"\n\n/s);
+      const quote2Match = quotesMarkdown.match(/## Quote 2: The Kingdom\n\n"([^"]+)"/s);
+      const quote3Match = quotesMarkdown.match(/## Quote 3: Grace and Reality\n\n"([^"]+)"/s);
+
+      setQuotes({
+        quote1: {
+          text: quote1Match ? quote1Match[1] : '"I asked the Lord to reveal Himself..."',
+          source: null
+        },
+        quote2: {
+          text: quote2Match ? quote2Match[1] : '"The Kingdom is already around us..."',
+          source: '/sermon/end-of-empire-dawn-of-kingdom'
+        },
+        quote3: {
+          text: quote3Match ? quote3Match[1] : '"God is reality itself..."',
+          source: '/sermon/reality-not-rules'
+        }
+      });
+    }
+    fetchQuotes();
+  }, []);
+
   return (
     <div className="landing-container">
       {/* Slide 1: The Cross */}
@@ -10,9 +44,12 @@ function Landing() {
         <div className="slide-content">
           <blockquote className="landing-quote">
             <p className="quote-text">
-              "I asked the Lord to reveal Himself. I asked to see Him more clearly. I asked to behold His divine nature.
-              <br /><br />
-              Why is it that I am surprised to then stare at a cross?"
+              {quotes.quote1.text.split('\n\n').map((para, i) => (
+                <React.Fragment key={i}>
+                  {para}
+                  {i < quotes.quote1.text.split('\n\n').length - 1 && <><br /><br /></>}
+                </React.Fragment>
+              ))}
             </p>
           </blockquote>
           <div className="scroll-indicator">↓</div>
@@ -24,11 +61,10 @@ function Landing() {
         <div className="slide-content">
           <blockquote className="landing-quote">
             <p className="quote-text">
-              "The Kingdom is already around us—like the Matrix, once you see it, you cannot unsee it.
-              Build no empire, feed the Kingdom."
+              {quotes.quote2.text}
             </p>
             <footer className="quote-source">
-              <Link to="/sermon/end-of-empire-dawn-of-kingdom">The End of Empire, The Dawn of the Kingdom</Link>
+              <Link to={quotes.quote2.source}>The End of Empire, The Dawn of the Kingdom</Link>
             </footer>
           </blockquote>
           <div className="scroll-indicator">↓</div>
@@ -40,11 +76,10 @@ function Landing() {
         <div className="slide-content">
           <blockquote className="landing-quote">
             <p className="quote-text">
-              "God is reality itself, not a system to exploit.
-              When Jesus says 'your sins are forgiven,' He observes reality—grace already overflowing."
+              {quotes.quote3.text}
             </p>
             <footer className="quote-source">
-              <Link to="/sermon/reality-not-rules">Reality, Not Rules</Link>
+              <Link to={quotes.quote3.source}>Reality, Not Rules</Link>
             </footer>
           </blockquote>
           <div className="scroll-indicator-final">↓ Continue to sermons</div>

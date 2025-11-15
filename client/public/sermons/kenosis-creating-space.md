@@ -2,6 +2,26 @@
 
 ---
 
+**Core Scripture:** Philippians 2:7
+
+—
+
+Like many - my life started with many expectations.
+Expectations from my parents, from myself, from society.
+
+Each of these expecations always had a flavor of finding fulfillment.
+Lets examine that word.
+Ful-fill-ment. To fill up completely. Often as the succesful accomplishment of an achievement.
+Filling myself. Accomplishing things.
+In various forms of personality tests, I’m definitely the “Achiever” or something similar. My default mode is to accomplish and get a list of successes that I can look back on and say “I did it!”
+I love a TODO list and checking it off.
+Part of that dopamine kick of finishing things may come from video games. Beating the game and getting that next level and powering up. Even modern media has this tendency to form us into creatures that try to FILL ourselves with achievements.
+
+## Key Point 1: God Empties Before He Fills
+
+The Trinitarian pattern shows us that God Himself operates through kenosis—the Father empties all of Himself into the Son, and the Son empties all of Himself into the Spirit. This self-limitation is not weakness but the ultimate expression of divine love and power. Christ’s incarnation demonstrates that power-under (submission and service) triumphs over power-over (domination and control).
+
+
 ## Key Point 1: The Divine Pattern of Kenosis: Emptying to Fill
 
 The Trinitarian pattern shows us that God Himself operates through kenosis—the Father empties all of Himself into the Son, and the Son empties all of Himself into the Spirit. This self-limitation is not weakness but the ultimate expression of divine love and power. Christ's incarnation demonstrates that power-under (submission and service) triumphs over power-over (domination and control).

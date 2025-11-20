@@ -1,28 +1,44 @@
-**Core Scripture:** Philippians 2:7
 
----
+   Who, being in very nature[a] God,
+   did not consider equality with God something to be used to his own advantage;
+   rather, he made himself nothing
+   by taking the very nature[b] of a servant,
+   being made in human likeness.
+   And being found in appearance as a man,
+   he humbled himself
+   by becoming obedient to death—
+   even death on a cross!
 
-**Core Scripture:** Philippians 2:7
+-Philippians 2:6-8, NIV
+
 
 —
 
-Like many - my life started with many expectations.
-Expectations from my parents, from myself, from society.
+Like all people: my life started with many expectations. Most of them wrong.
 
-Each of these expecations always had a flavor of finding fulfillment.
-Lets examine that word.
+Expectations originating from myself, my family, my community, my culture, and my particular circumstances in human history.
+
+Each of these expecations always had a flavor of finding fulfillment and seeking rightness. Finding a way that I should be in relation with the world and others. An expectation to behave as a child as one who fits in to the human order. Expectations of success and even temperment. Each of these outcomes from each expectation is rooted in the shared belief that by meeting those expectations, I would be fulfilled. My life would be full.
+
 Ful-fill-ment. To fill up completely. Often as the succesful accomplishment of an achievement.
 Filling myself. Accomplishing things.
+
+Well this has stuck with me!
+
 In various forms of personality tests, I’m definitely the “Achiever” or something similar. My default mode is to accomplish and get a list of successes that I can look back on and say “I did it!”
 I love a TODO list and checking it off.
-Part of that dopamine kick of finishing things may come from video games. Beating the game and getting that next level and powering up. Even modern media has this tendency to form us into creatures that try to FILL ourselves with achievements.
-
-## Key Point 1: God Empties Before He Fills
-
-The Trinitarian pattern shows us that God Himself operates through kenosis—the Father empties all of Himself into the Son, and the Son empties all of Himself into the Spirit. This self-limitation is not weakness but the ultimate expression of divine love and power. Christ’s incarnation demonstrates that power-under (submission and service) triumphs over power-over (domination and control).
 
 
-## Key Point 1: The Divine Pattern of Kenosis: Emptying to Fill
+But as I get older and as I look at the life of Jesus, I see the exact opposite pattern.
+
+Jesus did not seek accomplishment. His "great works" are generally small in scope compared to modern Silicon Valley 'lets change the world' standards.
+
+Talking abojt water to a women at a well? Healing a few select despot individuals? Even his death -- as cosmically powerful as it was -- was less a national spectacle for all of Rome and more a rehionally blip of a disturbance.
+
+I want to undertstand this Jesus. I am drawn to the historical figure and resurrected living spirit. How are these the same person? What is Jesus in his life and death trying to tell us about God? How do we apply it to our lives?
+
+
+## Key Point 1: God Empties Even Himself
 
 The Trinitarian pattern shows us that God Himself operates through kenosis—the Father empties all of Himself into the Son, and the Son empties all of Himself into the Spirit. This self-limitation is not weakness but the ultimate expression of divine love and power. Christ's incarnation demonstrates that power-under (submission and service) triumphs over power-over (domination and control).
 

@@ -20,8 +20,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prebuild": "node scripts/generate-sermon-index.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sermons:index": "node scripts/generate-sermon-index.js"
   },
   "eslintConfig": {
     "extends": [

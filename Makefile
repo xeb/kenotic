@@ -1,4 +1,4 @@
-.PHONY: help dev install build clean
+.PHONY: help dev install build clean sermons
 
 # Default target - show help
 help:
@@ -10,6 +10,7 @@ help:
 	@echo "  make install - Install dependencies"
 	@echo "  make dev     - Start the development server (port 1411)"
 	@echo "  make build   - Build the app for production"
+	@echo "  make sermons - Regenerate sermon index from files"
 	@echo "  make clean   - Remove all build artifacts and dependencies"
 	@echo ""
 
@@ -28,8 +29,13 @@ dev:
 	@echo "Starting development server on http://localhost:1411"
 	@cd client && npm start
 
+# Regenerate sermon index from public/sermons/*.yml files
+sermons:
+	@echo "Regenerating sermon index..."
+	@cd client && npm run sermons:index
+
 # Build the React app for production
-build:
+build: sermons
 	@echo "Building app for production..."
 	@cd client && npm run build
 	@echo "✓ Production build complete in client/build/"

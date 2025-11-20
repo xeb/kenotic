@@ -1,15 +1,22 @@
 import yaml from 'js-yaml';
 
-// List of all sermon IDs (must be kept in sync with files in public/sermons/)
-const SERMON_IDS = [
-  'kenosis-creating-space',
-  'end-of-empire-dawn-of-kingdom',
-  'reality-not-rules',
-  'keep-watch-hidden-identities',
-  'no-breath-in-it',
-  'spirits-agency-unembodied-power',
-  'bearing-his-name'
-];
+/**
+ * Load the sermon index from the manifest file
+ * @returns {Promise<Array>} Array of sermon IDs
+ */
+async function loadSermonIndex() {
+  try {
+    const response = await fetch('/sermons/index.json');
+    if (!response.ok) {
+      throw new Error('Failed to load sermon index');
+    }
+    const index = await response.json();
+    return index.sermons || [];
+  } catch (error) {
+    console.error('Error loading sermon index:', error);
+    return [];
+  }
+}
 
 /**
  * Load a single sermon's metadata and content
@@ -43,13 +50,22 @@ export async function loadSermon(id) {
 }
 
 /**
- * Load all sermons
+ * Load all sermons dynamically from the index
  * @returns {Promise<Array>} Array of sermon objects sorted by date (newest first)
  */
 export async function loadAllSermons() {
   try {
+    // First, load the sermon index
+    const sermonIds = await loadSermonIndex();
+
+    if (sermonIds.length === 0) {
+      console.warn('No sermons found in index');
+      return [];
+    }
+
+    // Then load all sermons
     const sermons = await Promise.all(
-      SERMON_IDS.map(id => loadSermon(id))
+      sermonIds.map(id => loadSermon(id))
     );
 
     // Sort by date, newest first

@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
-import SermonDetail from './components/SermonDetail';
 import './App.css';
 
 function App() {
@@ -10,9 +9,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div className="header-content">
-            <Link to="/" className="site-title">
-              <h1>kenotic.ai</h1>
-            </Link>
+            <h1>kenotic.ai</h1>
             <p className="tagline">self-limitation and service</p>
           </div>
         </header>
@@ -20,7 +17,7 @@ function App() {
         <main className="App-main">
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/sermon/:id" element={<SermonDetail />} />
+            <Route path="/chapter/:chapterNum" element={<Landing />} />
           </Routes>
         </main>
 
